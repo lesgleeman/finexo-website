@@ -32,6 +32,32 @@
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 
+  <script>
+    window._satellite = window._satellite || {};
+    window._satellite._monitors = window._satellite._monitors || [];
+    window._satellite._monitors.push({
+      ruleTriggered: function (event) {
+        console.log(
+          'rule triggered',
+          event.rule
+        );
+      },
+      ruleCompleted: function (event) {
+        console.log(
+          'rule completed',
+          event.rule
+        );
+      },
+      ruleConditionFailed: function (event) {
+        console.log(
+          'rule condition failed',
+          event.rule,
+          event.condition
+        );
+      }
+    });
+  </script>
+
   <!-- Adobe Analytics Natalie | DEV Script -->
   <script src="https://assets.adobedtm.com/e9875dd51dbe/d46d7ed54dd2/launch-2d5625b61d7a-development.min.js" async></script>
 
